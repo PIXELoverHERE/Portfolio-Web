@@ -1,0 +1,213 @@
+/* ==============================
+   Devansh Mishra — Portfolio CSS
+   Design System: Monochrome Engineering
+   ============================== */
+
+/* Base */
+body {
+    background-color: #0A0A0A;
+    color: #e2e2e2;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Selection */
+::selection {
+    background-color: #c7c6c4;
+    color: #131313;
+}
+
+/* Glass Card */
+.glass-card {
+    background: rgba(26, 26, 26, 0.1);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid #333333;
+    transition: all 0.3s ease;
+}
+
+.glass-card:hover {
+    border-color: #666666;
+    box-shadow: 0 0 40px rgba(229, 228, 226, 0.05);
+}
+
+/* Glass Panel (Connect cards) */
+.glass-panel {
+    background: rgba(26, 26, 26, 0.4);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-panel:hover {
+    border-color: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 0 40px rgba(229, 228, 226, 0.05);
+    background: rgba(35, 35, 35, 0.6);
+}
+
+/* Chips (Projects page) */
+.chip {
+    border: 1px solid #333333;
+    border-radius: 0;
+    background-color: #1a1a1a;
+}
+
+/* Silver gradient text */
+.silver-gradient-text {
+    background: linear-gradient(135deg, #FFFFFF 0%, #E5E4E2 50%, #C0C0C0 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Page transitions */
+.page-section {
+    opacity: 0;
+    transform: translateY(12px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    display: none;
+}
+
+.page-section.active {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Nav link transitions */
+.nav-link-item {
+    transition: all 0.3s ease;
+}
+
+/* GitHub contribution cell */
+.contrib-cell {
+    width: 12px;
+    height: 12px;
+    border-radius: 2px;
+    transition: transform 0.15s ease;
+}
+
+.contrib-cell:hover {
+    transform: scale(1.4);
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: #0A0A0A;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #333333;
+    border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555555;
+}
+
+/* Smooth scroll */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Education timeline line */
+.timeline-line {
+    position: relative;
+}
+
+.timeline-line::before {
+    content: '';
+    position: absolute;
+    left: 7px;
+    top: 8px;
+    bottom: 8px;
+    width: 1px;
+    background-color: rgba(68, 72, 69, 0.3);
+}
+
+/* Spotify progress bar animation */
+@keyframes spotifyProgress {
+    0% {
+        width: 0%;
+    }
+
+    100% {
+        width: 100%;
+    }
+}
+
+.spotify-progress-fill {
+    animation: spotifyProgress 30s linear infinite;
+}
+
+/* Fade-in for hero section elements */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(24px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fade-in-up {
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+.animate-fade-in-up-delay-1 {
+    animation: fadeInUp 0.6s ease 0.15s forwards;
+    opacity: 0;
+}
+
+.animate-fade-in-up-delay-2 {
+    animation: fadeInUp 0.6s ease 0.3s forwards;
+    opacity: 0;
+}
+
+.animate-fade-in-up-delay-3 {
+    animation: fadeInUp 0.6s ease 0.45s forwards;
+    opacity: 0;
+}
+
+/* GitHub contribution tooltip */
+.contrib-tooltip {
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #1f1f1f;
+    border: 1px solid #333333;
+    color: #e2e2e2;
+    font-size: 11px;
+    font-family: 'JetBrains Mono', monospace;
+    padding: 4px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.15s ease;
+    z-index: 10;
+}
+
+.contrib-cell:hover .contrib-tooltip {
+    opacity: 1;
+}
+
+/* Mobile menu */
+.mobile-menu {
+    transform: translateX(100%);
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.mobile-menu.open {
+    transform: translateX(0);
+}

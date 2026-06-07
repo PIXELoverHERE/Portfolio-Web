@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Devansh Mishra | Portfolio</title>
+    
+    <!-- Material Symbols Outlined -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <!-- Fonts: Inter, Geist, JetBrains Mono -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Geist:wght@400;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet"/>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    
+    <!-- Custom Tailwind Configuration -->
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-primary-container": "#646463",
+                        "inverse-surface": "#e2e2e2",
+                        "surface": "#131313",
+                        "on-primary-fixed-variant": "#464746",
+                        "on-surface": "#e2e2e2",
+                        "on-tertiary-fixed-variant": "#474746",
+                        "on-error-container": "#ffdad6",
+                        "error": "#ffb4ab",
+                        "secondary-container": "#464747",
+                        "on-secondary-container": "#b6b5b5",
+                        "surface-tint": "#c7c6c4",
+                        "on-tertiary": "#313030",
+                        "on-tertiary-fixed": "#1c1b1b",
+                        "secondary-fixed": "#e4e2e2",
+                        "surface-container-highest": "#353535",
+                        "primary-fixed": "#e3e2e0",
+                        "inverse-on-surface": "#303030",
+                        "on-secondary": "#303031",
+                        "tertiary-fixed-dim": "#c8c6c5",
+                        "on-surface-variant": "#c4c7c4",
+                        "surface-container": "#1f1f1f",
+                        "surface-container-low": "#1b1b1b",
+                        "surface-variant": "#353535",
+                        "error-container": "#93000a",
+                        "surface-container-lowest": "#0e0e0e",
+                        "outline": "#8e918e",
+                        "surface-dim": "#131313",
+                        "surface-container-high": "#2a2a2a",
+                        "on-secondary-fixed": "#1b1c1c",
+                        "on-tertiary-container": "#656464",
+                        "secondary-fixed-dim": "#c7c6c6",
+                        "on-error": "#690005",
+                        "primary": "#ffffff",
+                        "surface-bright": "#393939",
+                        "on-primary-fixed": "#1b1c1b",
+                        "on-background": "#e2e2e2",
+                        "tertiary-fixed": "#e5e2e1",
+                        "primary-container": "#e3e2e0",
+                        "primary-fixed-dim": "#c7c6c4",
+                        "background": "#0a0a0a",
+                        "tertiary": "#ffffff",
+                        "outline-variant": "#333333",
+                        "tertiary-container": "#e5e2e1",
+                        "on-primary": "#303130",
+                        "on-secondary-fixed-variant": "#464747",
+                        "inverse-primary": "#5e5e5d",
+                        "secondary": "#c7c6c6"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0px",
+                        "lg": "0px",
+                        "xl": "0px",
+                        "full": "0px"
+                    },
+                    spacing: {
+                        "container-max": "1200px",
+                        "unit": "8px",
+                        "section-padding": "120px",
+                        "section-padding-mobile": "64px",
+                        "gutter": "24px"
+                    },
+                    fontFamily: {
+                        "body-lg": ["Inter", "sans-serif"],
+                        "display-lg": ["Geist", "sans-serif"],
+                        "code-sm": ["JetBrains Mono", "monospace"],
+                        "display-lg-mobile": ["Geist", "sans-serif"],
+                        "headline-md": ["Geist", "sans-serif"],
+                        "label-caps": ["JetBrains Mono", "monospace"],
+                        "body-md": ["Inter", "sans-serif"]
+                    },
+                    fontSize: {
+                        "body-lg": ["18px", { "lineHeight": "1.6", "letterSpacing": "0em", "fontWeight": "400" }],
+                        "display-lg": ["64px", { "lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "700" }],
+                        "code-sm": ["14px", { "lineHeight": "1.5", "letterSpacing": "0em", "fontWeight": "400" }],
+                        "display-lg-mobile": ["40px", { "lineHeight": "1.2", "letterSpacing": "-0.03em", "fontWeight": "700" }],
+                        "headline-md": ["32px", { "lineHeight": "1.3", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+                        "label-caps": ["12px", { "lineHeight": "1.2", "letterSpacing": "0.1em", "fontWeight": "500" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "letterSpacing": "0em", "fontWeight": "400" }]
+                    },
+                    animation: {
+                        "scrolling": "scroll 30s linear infinite",
+                        "blink": "blink 1s step-end infinite"
+                    },
+                    keyframes: {
+                        scroll: {
+                            "0%": { transform: "translateX(0)" },
+                            "100%": { transform: "translateX(-50%)" }
+                        },
+                        blink: {
+                            "0%, 100%": { opacity: "1" },
+                            "50%": { opacity: "0" }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Link to external stylesheet -->
+    <link href="style.css" rel="stylesheet"/>
+</head>
+<body class="antialiased min-h-screen flex flex-col font-body-md text-body-md bg-[#0A0A0A] text-[#e2e2e2]">
+    
+    <!-- Shared TopNavBar -->
+    <nav class="bg-surface/80 backdrop-blur-xl text-primary font-body-md text-body-md fixed top-0 w-full z-50 border-b border-outline-variant/30 shadow-[0_0_40px_rgba(229,228,226,0.05)]">
+        <div class="max-w-container-max mx-auto px-gutter h-20 flex items-center justify-between">
+            <div class="flex items-center gap-4">
+                <img alt="Devansh Mishra" class="w-10 h-10 rounded-full object-cover border border-outline-variant/30" src="assets/profile.jpg"/>
+                <span class="brand-text font-display-lg text-headline-md tracking-tighter text-primary">Devansh</span>
+            </div>
+            <!-- Desktop Navigation -->
+            <ul class="hidden md:flex items-center gap-8">
+                <li><a class="nav-link-item text-primary font-bold border-b border-primary pb-1 cursor-pointer" data-nav="home">Home</a></li>
+                <li><a class="nav-link-item text-on-surface-variant font-body-md hover:text-primary cursor-pointer" data-nav="about">About Me</a></li>
+                <li><a class="nav-link-item text-on-surface-variant font-body-md hover:text-primary cursor-pointer" data-nav="projects">Projects</a></li>
+                <li><a class="nav-link-item text-on-surface-variant font-body-md hover:text-primary cursor-pointer" data-nav="connect">Connect</a></li>
+            </ul>
+            <a href="https://drive.google.com/file/d/1_4W_MRKEgjr2jnS3zD28p-0ynlWOFzew/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="hidden md:inline-flex bg-[#E5E4E2] text-[#000000] px-6 py-2 hover:bg-white transition-colors active:scale-95 font-code-sm text-code-sm font-medium">
+                Resume
+            </a>
+            <!-- Mobile Menu Icon -->
+            <button id="mobile-menu-toggle" class="md:hidden text-primary">
+                <span class="material-symbols-outlined">menu</span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Navigation Overlay Menu -->
+    <div id="mobile-menu" class="mobile-menu fixed inset-y-0 right-0 w-64 bg-surface-container border-l border-outline-variant/30 z-50 p-6 flex flex-col justify-between md:hidden shadow-2xl">
+        <div>
+            <div class="flex justify-between items-center mb-10">
+                <span class="font-display-lg text-headline-md tracking-tighter text-primary">Menu</span>
+                <button id="mobile-menu-close" class="text-primary">
+                    <span class="material-symbols-outlined">close</span>
+                </button>
+            </div>
+            <ul class="flex flex-col gap-6 text-lg">
+                <li><a class="nav-link-item text-primary font-bold cursor-pointer" data-nav="home">Home</a></li>
+                <li><a class="nav-link-item text-on-surface-variant cursor-pointer" data-nav="about">About Me</a></li>
+                <li><a class="nav-link-item text-on-surface-variant cursor-pointer" data-nav="projects">Projects</a></li>
+                <li><a class="nav-link-item text-on-surface-variant cursor-pointer" data-nav="connect">Connect</a></li>
+            </ul>
+        </div>
+        <div class="pt-6 border-t border-outline-variant/30">
+            <a href="https://drive.google.com/file/d/1_4W_MRKEgjr2jnS3zD28p-0ynlWOFzew/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="w-full inline-flex justify-center bg-[#E5E4E2] text-[#000000] px-6 py-3 font-code-sm text-code-sm font-medium">
+                Resume
+            </a>
+        </div>
+    </div>
+
+    <!-- MAIN SPA CONTENT CONTAINER -->
+    <main class="flex-grow pt-24">
+
+        <!-- 1. HOME SECTION -->
+        <section id="page-home" class="page-section active">
+            <!-- Hero -->
+            <div class="max-w-container-max mx-auto px-gutter min-h-[60vh] py-section-padding-mobile md:py-section-padding grid md:grid-cols-2 items-center gap-12">
+                <div class="flex flex-col justify-center">
+                    <h1 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-primary mb-6 min-h-[140px] md:min-h-[160px]">
+                        <span id="typewriter">Hi! I </span><span class="animate-blink text-secondary">|</span>
+                    </h1>
+                    <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">
+                        I build high-performance, scalable systems and craft elegant digital experiences. Focused on clean code and robust architecture.
+                    </p>
+                </div>
+                <div class="relative flex justify-center items-center">
+                    <div class="glass-card p-2 rounded-xl overflow-hidden">
+                        <img alt="Devansh Mishra" class="w-full max-w-md h-auto object-cover rounded-lg grayscale hover:grayscale-0 transition-all duration-500 border border-outline-variant/30 shadow-2xl" src="assets/profile-hero.jpeg"/>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Infinite Scrolling Skills -->
+            <div class="py-12 border-y border-outline-variant/20 overflow-hidden bg-surface-container-lowest">
+                <div class="relative w-full flex overflow-hidden">
+                    <div class="flex whitespace-nowrap animate-scrolling gap-8 px-4 w-max">
+                        <div class="flex items-center gap-8">
+                            <span class="font-code-sm text-code-sm bg-surface-container border border-outline-variant/30 px-6 py-3 text-on-surface-variant rounded-full hover:border-primary transition-colors">C</span>
+                            <span class="font-code-sm text-code-sm bg-surface-container border border-outline-variant/30 px-6 py-3 text-on-surface-variant rounded-full hover:border-primary transition-colors">AWS</span>
+                            <span class="font-code-sm text-code-sm bg-surface-container border border-outline-variant/30 px-6 py-3 text-on-surface-variant rounded-full hover:border-primary transition-colors">Python</span>
+                            <span class="font-code-sm text-code-sm bg-surface-container border border-outline-variant/30 px-6 py-3 text-on-surface-variant rounded-full hover:border-primary transition-colors">Flask</span>
+                            <span class="font-code-sm text-code-sm bg-surface-container border border-outline-variant/30 px-6 py-3 text-on-surface-variant rounded-full hover:border-primary transition-colors">HTML</span>
+                            <span class="font-code-sm text-code-sm bg-surface-container border border-outline-variant/30 px-6 py-3 text-on-surface-variant rounded-full hover:border-primary transition-colors">CSS</span>
+                            <span class="font-code-sm text-code-sm bg-surface-container border border-outline-variant/30 px-6 py-3 text-on-surface-variant rounded-full hover:border-primary transition-colors">JavaScript</span>
+                            <span class="font-code-sm text-code-sm bg-surface-container border border-outline-variant/30 px-6 py-3 text-on-surface-variant rounded-full hover:border-primary transition-colors">Flutter</span>
+                            <span class="font-code-sm text-code-sm bg-surface-container border border-outline-variant/30 px-6 py-3 text-on-surface-variant rounded-full hover:border-primary transition-colors">Figma</span>
+                            <span class="font-code-sm text-code-sm bg-surface-container border border-outline-variant/30 px-6 py-3 text-on-surface-variant rounded-full hover:border-primary transition-colors">Git</span>
+                            <span class="font-code-sm text-code-sm bg-surface-container border border-outline-variant/30 px-6 py-3 text-on-surface-variant rounded-full hover:border-primary transition-colors">Terminal</span>
+                            <span class="font-code-sm text-code-sm bg-surface-container border border-outline-variant/30 px-6 py-3 text-on-surface-variant rounded-full hover:border-primary transition-colors">GenAI</span>
+                        </div>
+                        <div class="flex items-center gap-8">
+                            <span class="font-code-sm text-code-sm bg-surface-container border border-outline-variant/30 px-6 py-3 text-on-surface-variant rounded-full hover:border-primary transition-colors">C</span>
+                            <span class="font-code-sm text-code-sm bg-surface-container border border-outline-variant/30 px-6 py-3 text-on-surface-variant rounded-full hover:border-primary transition-colors">AWS</span>
+                            <span class="font-code-sm text-code-sm bg-surface-container border border-outline-variant/30 px-6 py-3 text-on-surface-variant rounded-full hover:border-primary transition-colors">Python</span>
+                            <span class="font-code-sm text-code-sm bg-surface-container border border-outline-variant/30 px-6 py-3 text-on-surface-variant rounded-full hover:border-primary transition-colors">Flask</span>
+                            <span class="font-code-sm text-code-sm bg-surface-container border border-outline-variant/30 px-6 py-3 text-on-surface-variant rounded-full hover:border-primary transition-colors">HTML</span>
+                            <span class="font-code-sm text-code-sm bg-surface-container border border-outline-variant/30 px-6 py-3 text-on-surface-variant rounded-full hover:border-primary transition-colors">CSS</span>
+                            <span class="font-code-sm text-code-sm bg-surface-container border border-outline-variant/30 px-6 py-3 text-on-surface-variant rounded-full hover:border-primary transition-colors">JavaScript</span>
+                            <span class="font-code-sm text-code-sm bg-surface-container border border-outline-variant/30 px-6 py-3 text-on-surface-variant rounded-full hover:border-primary transition-colors">Flutter</span>
+                            <span class="font-code-sm text-code-sm bg-surface-container border border-outline-variant/30 px-6 py-3 text-on-surface-variant rounded-full hover:border-primary transition-colors">Figma</span>
+                            <span class="font-code-sm text-code-sm bg-surface-container border border-outline-variant/30 px-6 py-3 text-on-surface-variant rounded-full hover:border-primary transition-colors">Git</span>
+                            <span class="font-code-sm text-code-sm bg-surface-container border border-outline-variant/30 px-6 py-3 text-on-surface-variant rounded-full hover:border-primary transition-colors">Terminal</span>
+                            <span class="font-code-sm text-code-sm bg-surface-container border border-outline-variant/30 px-6 py-3 text-on-surface-variant rounded-full hover:border-primary transition-colors">GenAI</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Current Focus & Spotify Widget -->
+            <div class="max-w-container-max mx-auto px-gutter py-section-padding-mobile md:py-section-padding">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <!-- Main Content Cell -->
+                    <div class="glass-card col-span-1 md:col-span-2 p-8 flex flex-col justify-between min-h-[300px]">
+                        <div>
+                            <h2 class="font-headline-md text-headline-md text-primary mb-4">Current Focus</h2>
+                            <p class="font-body-md text-body-md text-on-surface-variant">
+                                Currently exploring data structure algorithms and developer operations with AWS. Always learning, always building.
+                            </p>
+                        </div>
+                        <div class="mt-8">
+                            <a class="inline-flex items-center gap-2 text-secondary hover:text-primary transition-colors border-b border-transparent hover:border-primary pb-1 cursor-pointer" data-nav="projects">
+                                <span class="font-code-sm text-code-sm">View Latest Project</span>
+                                <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- Spotify Widget Cell -->
+                    <div class="glass-card col-span-1 p-6 flex flex-col justify-between min-h-[300px]">
+                        <div class="flex items-center gap-2 mb-4">
+                            <span id="spotify-status-icon" class="material-symbols-outlined text-secondary">graphic_eq</span>
+                            <span class="font-label-caps text-label-caps text-secondary uppercase tracking-widest">Now Playing</span>
+                        </div>
+                        <div class="flex flex-col gap-4 mt-auto">
+                            <div class="w-full h-32 bg-surface-container border border-outline-variant/30 flex items-center justify-center relative overflow-hidden">
+                                <span class="material-symbols-outlined text-4xl text-outline-variant">album</span>
+                                <img id="spotify-album-art" alt="Album Art" class="absolute inset-0 w-full h-full object-cover hidden" src="" />
+                            </div>
+                            <div>
+                                <h3 id="spotify-track" class="font-body-lg text-body-lg font-semibold text-primary truncate">Loading...</h3>
+                                <p id="spotify-artist" class="font-body-md text-body-md text-on-surface-variant truncate">Please wait</p>
+                            </div>
+                            <div class="w-full h-1 bg-surface-container rounded-full overflow-hidden mt-2">
+                                <div id="spotify-progress" class="h-full bg-secondary w-0"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. ABOUT ME SECTION -->
+        <section id="page-about" class="page-section">
+            <div class="max-w-container-max mx-auto px-gutter py-section-padding-mobile md:py-section-padding-mobile">
+                <header class="mb-20 md:mb-32">
+                    <h1 class="font-display-lg-mobile text-display-lg-mobile md:font-display-lg md:text-display-lg text-primary mb-6">Building the foundation.</h1>
+                    <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">
+                        I'm Devansh Mishra, a software engineer obsessed with clean architecture, scalable systems, and the pursuit of digital craftsmanship.
+                    </p>
+                </header>
+                
+                <div class="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-24">
+                    <!-- Left Column: Bio & GitHub -->
+                    <div class="md:col-span-7 space-y-8">
+                        <div class="prose prose-invert prose-p:font-body-md prose-p:text-body-md prose-p:text-on-surface-variant prose-p:leading-relaxed max-w-none">
+                            <p class="mb-6">
+                                My journey in software engineering is driven by a deep-seated curiosity to understand how complex systems operate under the hood. I specialize in backend architecture, focusing on distributed systems, microservices, and performance optimization. For me, code is not just instructions for a machine; it's a medium for solving real-world problems with elegance and efficiency.
+                            </p>
+                            <p class="mb-6">
+                                Over the years, I've had the privilege of working alongside brilliant minds, tackling challenges that range from optimizing database queries to designing fault-tolerant architectures capable of handling massive scale. I believe in the philosophy of "quiet luxury" in code—where the complexity is hidden beneath a simple, intuitive interface, and the true value shines through reliability and speed.
+                            </p>
+                            <p class="mb-6">
+                                When I'm not deep in an IDE, you can find me exploring the latest advancements in cloud computing, contributing to open-source, or refining my understanding of system design patterns. I approach every project with a meticulous attention to detail, ensuring that the foundation is robust enough to support future growth.
+                            </p>
+                        </div>
+                        <div class="pt-8 border-t border-outline-variant/30 flex gap-4">
+                            <a class="inline-flex items-center justify-center px-6 py-3 bg-[#E5E4E2] text-[#000000] font-body-md text-body-md font-medium rounded hover:bg-white transition-colors duration-300 cursor-pointer" data-nav="connect">Get in Touch</a>
+                            <a href="https://drive.google.com/file/d/1_4W_MRKEgjr2jnS3zD28p-0ynlWOFzew/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center px-6 py-3 bg-transparent text-primary border border-outline-variant hover:border-primary font-body-md text-body-md font-medium rounded transition-colors duration-300">View Resume</a>
+                        </div>
+                        
+                        <!-- GitHub Activity Card -->
+                        <div class="mt-12 pt-12 border-t border-outline-variant/30">
+                            <div class="flex items-center justify-between mb-6">
+                                <h3 class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-widest">GitHub Activity</h3>
+                                <span id="github-count" class="font-code-sm text-code-sm text-on-surface-variant opacity-80">Loading contributions...</span>
+                            </div>
+                            <div class="bg-[#1A1A1A]/10 backdrop-blur-md border border-[#333333] p-6 rounded overflow-x-auto">
+                                <div id="github-contributions" class="w-full overflow-x-auto pb-2 flex justify-center">
+                                    <!-- Populated dynamically by script.js -->
+                                </div>
+                                <div class="flex items-center justify-end gap-2 mt-4 text-xs">
+                                    <span class="font-code-sm text-label-caps text-on-surface-variant">Less</span>
+                                    <div class="flex gap-1">
+                                        <div class="w-3 h-3 rounded-sm bg-[#E1E9EE]/10"></div>
+                                        <div class="w-3 h-3 rounded-sm bg-[#0077B5]/20"></div>
+                                        <div class="w-3 h-3 rounded-sm bg-[#0077B5]/40"></div>
+                                        <div class="w-3 h-3 rounded-sm bg-[#0077B5]/70"></div>
+                                        <div class="w-3 h-3 rounded-sm bg-[#0077B5]"></div>
+                                    </div>
+                                    <span class="font-code-sm text-label-caps text-on-surface-variant">More</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Column: Core Competencies & Education -->
+                    <div class="md:col-span-5 space-y-12">
+                        <div>
+                            <h3 class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-widest mb-6 border-b border-outline-variant/30 pb-2">Core Competencies</h3>
+                            <div class="space-y-4">
+                                <div class="bg-[#1A1A1A]/10 backdrop-blur-md border border-[#333333] p-4 rounded hover:border-[#666666] transition-colors duration-300 group">
+                                    <h4 class="font-headline-md text-body-lg text-primary mb-1 group-hover:text-white transition-colors">Full-Stack Web Development</h4>
+                                    <p class="font-body-md text-code-sm text-on-surface-variant">Designing responsive, user-centric frontends and pairing them with robust, high-performance backends.</p>
+                                </div>
+                                <div class="bg-[#1A1A1A]/10 backdrop-blur-md border border-[#333333] p-4 rounded hover:border-[#666666] transition-colors duration-300 group">
+                                    <h4 class="font-headline-md text-body-lg text-primary mb-1 group-hover:text-white transition-colors">Backend Engineering</h4>
+                                    <p class="font-body-md text-code-sm text-on-surface-variant">Expertise in Python, Flask, and FastAPI for building fast, well-documented, and scalable microservices.</p>
+                                </div>
+                                <div class="bg-[#1A1A1A]/10 backdrop-blur-md border border-[#333333] p-4 rounded hover:border-[#666666] transition-colors duration-300 group">
+                                    <h4 class="font-headline-md text-body-lg text-primary mb-1 group-hover:text-white transition-colors">Linux &amp; DevOps</h4>
+                                    <p class="font-body-md text-code-sm text-on-surface-variant">Deep comfort working natively in Linux environments, managing package ecosystems, and automating development workflows.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h3 class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-widest mb-8 border-b border-outline-variant/30 pb-2">Education</h3>
+                            <div class="space-y-12 timeline-line">
+                                <div class="relative pl-8">
+                                    <div class="absolute left-0 top-2 w-4 h-4 rounded-full bg-background border-2 border-primary"></div>
+                                    <div class="flex flex-col gap-1">
+                                        <span class="font-code-sm text-label-caps text-on-surface-variant tracking-widest">2024 — 2028</span>
+                                        <h4 class="font-bold text-body-lg text-primary">B.Tech in Information Technology</h4>
+                                        <p class="font-body-md text-on-surface-variant opacity-80">JSS Academy of Technical Education, Noida</p>
+                                    </div>
+                                </div>
+                                <div class="relative pl-8">
+                                    <div class="absolute left-0 top-2 w-4 h-4 rounded-full bg-background border-2 border-outline-variant"></div>
+                                    <div class="flex flex-col gap-1">
+                                        <span class="font-code-sm text-label-caps text-on-surface-variant tracking-widest">2022 — 2024</span>
+                                        <h4 class="font-bold text-body-lg text-primary">Senior Secondary Education</h4>
+                                        <p class="font-body-md text-on-surface-variant opacity-80">The Vivekanand School, Narela</p>
+                                    </div>
+                                </div>
+                                <div class="relative pl-8">
+                                    <div class="absolute left-0 top-2 w-4 h-4 rounded-full bg-background border-2 border-outline-variant"></div>
+                                    <div class="flex flex-col gap-1">
+                                        <span class="font-code-sm text-label-caps text-on-surface-variant tracking-widest">2012 — 2022</span>
+                                        <h4 class="font-bold text-body-lg text-primary">Secondary Education</h4>
+                                        <p class="font-body-md text-on-surface-variant opacity-80">Seth Anandram Jaipuria School, Ghaziabad</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. PROJECTS SECTION -->
+        <section id="page-projects" class="page-section">
+            <div class="max-w-container-max mx-auto px-gutter py-section-padding-mobile md:py-section-padding-mobile">
+                <header class="mb-24">
+                    <h1 class="font-display-lg-mobile text-display-lg-mobile md:font-display-lg md:text-display-lg text-primary mb-6">Selected Works.</h1>
+                    <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">
+                        A curated collection of system architecture, open-source repositories, and performance optimizations. Built with precision and a focus on scalability.
+                    </p>
+                </header>
+
+                <div class="grid grid-cols-1 gap-8">
+                    <!-- Project 1: Seal-App -->
+                    <article class="glass-card p-8 md:p-12 flex flex-col md:flex-row gap-12 group">
+                        <div class="flex-1 flex flex-col justify-between">
+                            <div>
+                                <h2 class="font-headline-md text-headline-md text-primary mb-4 group-hover:text-secondary transition-colors">Seal-App</h2>
+                                <p class="font-body-md text-body-md text-on-surface-variant mb-8 max-w-xl">
+                                    A high-performance cross-platform application developed using Dart. Focused on system-level efficiency and providing a streamlined user experience through modern architectural patterns.
+                                </p>
+                            </div>
+                            <div class="space-y-6">
+                                <div class="flex flex-wrap gap-3">
+                                    <span class="chip font-code-sm text-code-sm text-secondary px-3 py-1">Dart</span>
+                                    <span class="chip font-code-sm text-code-sm text-secondary px-3 py-1">Cross-Platform</span>
+                                    <span class="chip font-code-sm text-code-sm text-secondary px-3 py-1">Mobile Dev</span>
+                                </div>
+                                <div class="flex items-center gap-4">
+                                    <a class="flex items-center gap-2 text-on-surface-variant hover:text-primary transition-colors" href="https://github.com/PIXELoverHERE" target="_blank" rel="noopener noreferrer">
+                                        <span class="material-symbols-outlined text-[20px]">code</span>
+                                        <span class="font-label-caps text-label-caps uppercase">Source Code</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex-1 hidden md:flex items-center justify-center bg-surface-container-low border border-outline-variant/50 relative overflow-hidden">
+                            <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-surface-variant/10 via-background to-background"></div>
+                            <span class="material-symbols-outlined text-6xl text-outline-variant/30">apps</span>
+                        </div>
+                    </article>
+
+                    <!-- Project 2: Voice Assistant -->
+                    <article class="glass-card p-8 md:p-12 flex flex-col md:flex-row gap-12 group">
+                        <div class="flex-1 flex flex-col justify-between">
+                            <div>
+                                <h2 class="font-headline-md text-headline-md text-primary mb-4 group-hover:text-secondary transition-colors">STS &amp; STT Terminal AI Integrated Assistant</h2>
+                                <p class="font-body-md text-body-md text-on-surface-variant mb-8 max-w-xl">
+                                    An advanced Python-based voice automation toolchain. Leverages signal processing and modular command structures to deliver a responsive, zero-latency assistant interface.
+                                </p>
+                            </div>
+                            <div class="space-y-6">
+                                <div class="flex flex-wrap gap-3">
+                                    <span class="chip font-code-sm text-code-sm text-secondary px-3 py-1">Python</span>
+                                    <span class="chip font-code-sm text-code-sm text-secondary px-3 py-1">Automation</span>
+                                    <span class="chip font-code-sm text-code-sm text-secondary px-3 py-1">LLM</span>
+                                </div>
+                                <div class="flex items-center gap-4">
+                                    <a class="flex items-center gap-2 text-on-surface-variant hover:text-primary transition-colors" href="https://github.com/PIXELoverHERE" target="_blank" rel="noopener noreferrer">
+                                        <span class="material-symbols-outlined text-[20px]">terminal</span>
+                                        <span class="font-label-caps text-label-caps uppercase">View Project</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex-1 hidden md:flex items-center justify-center bg-surface-container-low border border-outline-variant/50 relative overflow-hidden">
+                            <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-surface-variant/10 via-background to-background"></div>
+                            <span class="material-symbols-outlined text-6xl text-outline-variant/30">mic</span>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. CONNECT SECTION -->
+        <section id="page-connect" class="page-section">
+            <div class="max-w-container-max mx-auto px-gutter py-section-padding-mobile md:py-section-padding-mobile">
+                <div class="grid grid-cols-1 gap-16 md:gap-24 mt-12 md:mt-24">
+                    <div class="flex flex-col justify-start">
+                        <h1 class="font-display-lg-mobile text-display-lg-mobile md:font-display-lg md:text-display-lg silver-gradient-text mb-6">
+                            Let's Build.
+                        </h1>
+                        <p class="font-body-lg text-body-lg text-on-surface-variant mb-12 max-w-md">
+                            Open to collaboration, technical discussions, or exploring new opportunities. Drop a line below.
+                        </p>
+                        
+                        <div class="mt-12 pt-12 border-t border-outline-variant/20 grid grid-cols-1 md:grid-cols-3 gap-6 w-full">
+                            <!-- Email -->
+                            <a class="glass-panel p-10 flex flex-col items-center justify-center gap-6 group" href="mailto:devanshmishra231@outlook.com">
+                                <div class="w-12 h-12 flex items-center justify-center">
+                                    <span class="material-symbols-outlined text-4xl text-outline-variant group-hover:scale-110 transition-transform">mail</span>
+                                </div>
+                                <span class="font-label-caps text-label-caps text-on-surface-variant group-hover:text-primary transition-colors tracking-widest uppercase">Email</span>
+                            </a>
+                            <!-- LinkedIn -->
+                            <a class="glass-panel p-10 flex flex-col items-center justify-center gap-6 group" href="https://www.linkedin.com/in/devansh-mishra231" target="_blank" rel="noopener noreferrer">
+                                <div class="w-12 h-12 flex items-center justify-center">
+                                    <span class="material-symbols-outlined text-4xl text-outline-variant group-hover:scale-110 transition-transform">share</span>
+                                </div>
+                                <span class="font-label-caps text-label-caps text-on-surface-variant group-hover:text-primary transition-colors tracking-widest uppercase">LinkedIn</span>
+                            </a>
+                            <!-- GitHub -->
+                            <a class="glass-panel p-10 flex flex-col items-center justify-center gap-6 group" href="https://github.com/PIXELoverHERE" target="_blank" rel="noopener noreferrer">
+                                <div class="w-12 h-12 flex items-center justify-center">
+                                    <span class="material-symbols-outlined text-4xl text-outline-variant group-hover:scale-110 transition-transform">code</span>
+                                </div>
+                                <span class="font-label-caps text-label-caps text-on-surface-variant group-hover:text-primary transition-colors tracking-widest uppercase">GitHub</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Shared Footer -->
+    <footer class="bg-surface text-secondary font-code-sm text-code-sm w-full py-section-padding-mobile md:py-section-padding border-t border-outline-variant/20 mt-12">
+        <div class="max-w-container-max mx-auto px-gutter flex flex-col md:flex-row justify-between items-center gap-8">
+            <div class="flex items-center gap-2">
+                <span class="font-label-caps text-label-caps text-primary">DM</span>
+                <span class="text-on-secondary-container font-code-sm text-code-sm opacity-80">© 2026 Devansh Mishra. Built with precision.</span>
+            </div>
+            <div class="flex items-center gap-6">
+                <a class="text-on-secondary-container hover:text-primary transition-all opacity-80 hover:opacity-100" href="https://github.com/PIXELoverHERE" target="_blank" rel="noopener noreferrer">GitHub</a>
+                <a class="text-on-secondary-container hover:text-primary transition-all opacity-80 hover:opacity-100" href="https://www.linkedin.com/in/devansh-mishra231" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                <a class="text-on-secondary-container hover:text-primary transition-all opacity-80 hover:opacity-100" href="#">Twitter</a>
+                <a class="text-on-secondary-container hover:text-primary transition-all opacity-80 hover:opacity-100" href="https://open.spotify.com/user/31u7qyhyzpfh5hkepgw6gvfhbqqy?si=1cfefc98a6dc4208" target="_blank" rel="noopener noreferrer">Spotify</a>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- Spotify Setup Helper Modal -->
+    <div id="spotify-setup-modal" class="fixed inset-0 bg-[#0A0A0A]/85 backdrop-blur-md z-[100] flex items-center justify-center hidden p-4">
+        <div class="bg-[#131313] max-w-lg w-full p-8 border border-outline-variant/30 flex flex-col gap-6 relative shadow-2xl">
+            <button id="spotify-setup-close" class="absolute top-6 right-6 text-on-surface-variant hover:text-primary transition-colors">
+                <span class="material-symbols-outlined">close</span>
+            </button>
+            
+            <div class="flex items-center gap-3 border-b border-outline-variant/20 pb-4">
+                <span class="material-symbols-outlined text-3xl text-secondary">graphic_eq</span>
+                <h2 class="font-display-lg text-headline-md text-primary">Spotify Widget Setup</h2>
+            </div>
+            
+            <div id="setup-step-1" class="flex flex-col gap-4">
+                <p class="font-body-md text-on-surface-variant leading-relaxed">
+                    To make your Spotify widget live, you need to generate a permanent refresh token.
+                </p>
+                <ol class="list-decimal pl-5 font-body-md text-on-surface-variant space-y-2">
+                    <li>Go to the <a href="https://developer.spotify.com/dashboard" target="_blank" rel="noopener noreferrer" class="text-secondary hover:text-primary underline">Spotify Developer Dashboard</a> and log in.</li>
+                    <li>Create an app. Set your **Redirect URI** to exactly:
+                        <code id="setup-redirect-uri" class="bg-surface-container px-2 py-1 border border-outline-variant/30 font-code-sm text-code-sm text-primary select-all break-all block my-1">http://localhost:5500/</code>
+                    </li>
+                    <li>Copy your **Client ID** and enter it below:</li>
+                </ol>
+                <div class="flex flex-col gap-2 mt-2">
+                    <label for="setup-client-id" class="font-code-sm text-label-caps text-on-surface-variant uppercase tracking-widest">Client ID</label>
+                    <input type="text" id="setup-client-id" placeholder="Paste Spotify Client ID here" class="w-full bg-[#1b1b1b] border border-outline-variant/30 px-4 py-3 text-primary placeholder-on-surface-variant/40 focus:border-primary focus:outline-none transition-colors" />
+                </div>
+                <button id="setup-connect-btn" class="w-full bg-primary text-background font-body-md font-semibold py-3 hover:bg-secondary active:scale-95 transition-all mt-2">
+                    Connect to Spotify
+                </button>
+            </div>
+            
+            <div id="setup-step-2" class="flex flex-col gap-4 hidden">
+                <p class="font-body-md text-on-surface-variant leading-relaxed">
+                    Success! We have generated your Spotify tokens. Copy the configuration below and update it in your <code class="font-code-sm text-code-sm text-primary">script.js</code> file:
+                </p>
+                
+                <div class="relative bg-[#0e0e0e] border border-outline-variant/30 p-4 font-code-sm text-code-sm text-primary overflow-x-auto select-all max-h-48">
+                    <pre id="setup-code-output" class="whitespace-pre-wrap break-all"></pre>
+                </div>
+                
+                <p class="font-body-md text-secondary leading-relaxed text-sm">
+                    Once pasted, save the file. The Spotify widget will display your live status on page load!
+                </p>
+                <button id="setup-finish-btn" class="w-full bg-[#1b1b1b] border border-outline-variant/30 text-primary font-body-md font-semibold py-3 hover:bg-[#353535] transition-all">
+                    Done
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Script connection -->
+    <script src="script.js"></script>
+</body>
+</html>
