@@ -18,7 +18,7 @@ const CONFIG = {
         twitter: '#',
         spotify: 'https://open.spotify.com/user/31u7qyhyzpfh5hkepgw6gvfhbqqy?si=1cfefc98a6dc4208',
         email: 'devanshmishra231@outlook.com',
-        resume: 'https://drive.google.com/file/d/1_4W_MRKEgjr2jnS3zD28p-0ynlWOFzew/view?usp=sharing'
+        resume: 'https://drive.google.com/drive/folders/19I5Zx7XLQjTgRl9D6y2Y0i8Hd0Z0hy_2?usp=sharing'
     },
     typewriter: {
         phrases: [
