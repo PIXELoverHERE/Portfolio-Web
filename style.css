@@ -23,12 +23,14 @@ body {
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     border: 1px solid #333333;
-    transition: all 0.3s ease;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    transform: translateY(0);
 }
 
 .glass-card:hover {
     border-color: #666666;
-    box-shadow: 0 0 40px rgba(229, 228, 226, 0.05);
+    box-shadow: 0 10px 40px rgba(229, 228, 226, 0.05);
+    transform: translateY(-4px);
 }
 
 /* Glass Panel (Connect cards) */
@@ -37,12 +39,14 @@ body {
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     border: 1px solid rgba(255, 255, 255, 0.1);
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    transform: translateY(0);
 }
 
 .glass-panel:hover {
     border-color: rgba(255, 255, 255, 0.3);
-    box-shadow: 0 0 40px rgba(229, 228, 226, 0.05);
+    box-shadow: 0 10px 40px rgba(229, 228, 226, 0.05);
+    transform: translateY(-4px);
     background: rgba(35, 35, 35, 0.6);
 }
 
@@ -77,7 +81,8 @@ body {
 
 /* Nav link transitions */
 .nav-link-item {
-    transition: all 0.3s ease;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    transform: translateY(0);
 }
 
 /* GitHub contribution cell */
