@@ -89,6 +89,9 @@ function switchPage(pageId) {
                 link.classList.remove('text-on-surface-variant');
             }
         });
+
+        // Notify other components (e.g. 3D sword viewer)
+        window.dispatchEvent(new CustomEvent('page-switched', { detail: { pageId } }));
     }, 50);
 
     // Update brand text based on page

@@ -211,3 +211,29 @@ html {
 .mobile-menu.open {
     transform: translateX(0);
 }
+
+/* ===================================
+   3D Chevalier Sword Viewer Box
+   =================================== */
+.sword-box {
+    background: radial-gradient(circle at 50% 35%, rgba(28, 28, 28, 0.55) 0%, rgba(12, 12, 12, 0.8) 100%);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.sword-box:hover {
+    border-color: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8), 0 0 35px rgba(229, 228, 226, 0.06);
+}
+
+#sword-canvas-container canvas {
+    outline: none;
+    user-select: none;
+    -webkit-user-select: none;
+}
